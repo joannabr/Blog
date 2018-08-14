@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Rejestracja</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+<div style="width: 600px; margin-top: 50px; margin-left: auto; margin-right: auto; padding: 20px;">
+
+    <form action="/post" method="post" th:object="${postForm}">
+        <input th:field="*{context}" type="text" class="form-control"  placeholder="Treść">
+        <input th:field="*{title}" type="text" class="form-control" placeholder="Tytuł">
+
+        <button type="submit" class="btn btn-default">Dodaj post</button>
+
+    </form>
+</div>
+</body>
+</html>

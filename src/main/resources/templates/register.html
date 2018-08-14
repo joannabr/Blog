@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Rejestracja</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+<div style="width: 600px; margin-top: 50px; margin-left: auto; margin-right: auto; padding: 20px;">
+    <div th:if="${infoAboutRegister != null}" class="alert alert-danger">
+        <strong th:text="${infoAboutRegister}"></strong>
+    </div>
+
+    <form action="/register" method="post" th:object="${registerForm}">
+        <input th:field="*{username}" type="text" class="form-control"  placeholder="Nick">
+        <input th:field="*{email}" type="text" class="form-control" placeholder="Email">
+        <input th:field="*{password}" type="password" class="form-control"  placeholder="Hasło">
+        <input th:field="*{age}" type="number" class="form-control"  placeholder="Wiek">
+        <button type="submit" class="btn btn-default">Zarejestruj  się</button>
+
+    </form>
+    <button onclick="window.href='/login'" class="btn btn-default">Zaloguj się</button>
+
+
+</div>
+</body>
+</html>
