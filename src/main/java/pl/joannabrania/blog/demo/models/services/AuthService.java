@@ -1,5 +1,6 @@
 package pl.joannabrania.blog.demo.models.services;
 
+import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pl.joannabrania.blog.demo.models.UserEntity;
@@ -55,8 +56,15 @@ public class AuthService {
     }
 
     public Optional<UserEntity> findByEmail(String email){
+
         return userRepository.findByEmail(email);
     }
+
+    public void saveUser(UserEntity userEntity){
+        userRepository.save(userEntity);
+    }
+
+
 
 
 
